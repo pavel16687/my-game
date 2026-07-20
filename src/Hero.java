@@ -1,7 +1,7 @@
 public class Hero {
-    String form;
-    int health;
-    int damage;
+    protected String form;
+    protected int health;
+    protected int damage;
 
     public Hero(String form,int health,int damage){
         this.form=form;
@@ -16,5 +16,27 @@ public class Hero {
                 this.health,
                 this.damage);
         System.out.println();
+    }
+    public int getDamage() {
+        return damage;
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public String getForm() {
+        return form;
+    }
+
+    public boolean isAlive(){
+        return health>0;
+    }
+    public void takeDamage(int damage){
+        health=getHealth()-damage;
+        if (getHealth()<0){
+            health=0;
+        }
+        System.out.println("y "+getForm()+" ostalos "+getHealth());
     }
 }
